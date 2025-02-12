@@ -7,7 +7,7 @@ This is a chat application built with Next.js. The project includes a database s
 - [Node.js](https://nodejs.org/) (we recommend the LTS version)
 - [Yarn](https://yarnpkg.com/) as package manager
 
-##Installation
+## Installation
 
 1. **Install as dependencies:**
 
@@ -15,7 +15,7 @@ This is a chat application built with Next.js. The project includes a database s
 yarn installation
 ```
 
-##Database
+## Database
 
 2. **Database Configuration:**
 
