@@ -1,0 +1,16 @@
+$primary-color: #1e88e5;
+$text-color: #ffffff;
+
+.chatHeader {
+  background: $primary-color;
+  color: $text-color;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid darken($primary-color, 10%);
+}
+
+.userName {
+  font-weight: bold;
+}

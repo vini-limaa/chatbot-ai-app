@@ -1,0 +1,58 @@
+$primary-color: #1e88e5;
+$secondary-color: #bbdefb;
+$text-color: #ffffff;
+
+.chatBox {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .senderMessage {
+    padding: 12px;
+    margin: 8px;
+    border-radius: 10px;
+    max-width: 75%;
+    font-size: 14px;
+    background: $primary-color;
+    color: $text-color;
+    align-self: flex-end;
+  }
+
+  .receiverMessage {
+    padding: 12px;
+    margin: 8px;
+    border-radius: 10px;
+    max-width: 75%;
+    font-size: 14px;
+    background: #ddd;
+    color: #333;
+    align-self: flex-start;
+  }
+
+  .author {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .timestamp {
+    display: block;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+
+  &.loaded {
+    display: none;
+  }
+}
