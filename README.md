@@ -4,12 +4,12 @@ This is a chat application built with Next.js. The project includes a database s
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (we recommend the LTS version)
+- [Node.js](https://nodejs.org/) (recommended the LTS version)
 - [Yarn](https://yarnpkg.com/) as package manager
 
 ## Installation
 
-1. **Install as dependencies:**
+1. **Install dependencies:**
 
 ```bash
 yarn installation
