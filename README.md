@@ -4,25 +4,25 @@ This is a chat application built with Next.js. The project includes a database s
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (we recommend the LTS version)
+- [Node.js](https://nodejs.org/) (recommended the LTS version)
 - [Yarn](https://yarnpkg.com/) as package manager
 
-##Installation
+## Installation
 
-1. **Install as dependencies:**
+1. **Install dependencies:**
 
 ```bash
-yarn installation
+yarn install
 ```
 
-##Database
+## Database
 
 2. **Database Configuration:**
 
 Run the command below to install and configure the prisma database system:
 
 ```bash
-yarn configuration
+yarn setup
 ```
 
 ## How to run the application
@@ -32,7 +32,7 @@ yarn configuration
 To run the application in development mode, run:
 
 ```bash
-yarn developer
+yarn dev
 ```
 
 ## Tests
@@ -54,7 +54,7 @@ The dashboard was not built, but a studio resource from the Prisma database syst
 To open the panel that lists all messages, run:
 
 ```bash
-yarn open panel
+yarn open-dashboard
 ```
 
 ## Notes
