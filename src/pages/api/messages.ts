@@ -8,12 +8,30 @@ export default async function handler(
   res: NextApiResponse<IMessage[] | { error: string }>
 ) {
   if (req.method === "POST") {
-    try {
-      const { author, message } = req.body as Pick<
-        IMessage,
-        "author" | "message"
-      >;
+    const { author, message } = req.body as Pick<
+      IMessage,
+      "author" | "message"
+    >;
 
+    const { generate } = req.body;
+
+    if (generate) {
+      try {
+        if (!message) {
+          return res.status(400).json({ error: "Message are required." });
+        }
+
+        const aiResponse = await getAIResponse(message);
+        const botMessage = await saveMessage("ChatBot", aiResponse);
+
+        return res.status(201).json([botMessage]);
+      } catch (error) {
+        console.error("Error processing POST request:", error);
+        return res.status(500).json({ error: "Failed to process message." });
+      }
+    }
+
+    try {
       if (!author || !message) {
         return res
           .status(400)
@@ -21,13 +39,11 @@ export default async function handler(
       }
 
       const userMessage = await saveMessage(author, message);
-      const aiResponse = await getAIResponse(message);
-      const botMessage = await saveMessage("ChatBot", aiResponse);
 
-      return res.status(201).json([userMessage, botMessage]);
+      return res.status(201).json([userMessage]);
     } catch (error) {
       console.error("Error processing POST request:", error);
-      return res.status(500).json({ error: "Failed to process message." });
+      return res.status(500).json({ error: "Failed to save message." });
     }
   }
 

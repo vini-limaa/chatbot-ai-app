@@ -39,14 +39,23 @@ const useChat = () => {
     }));
   };
 
-  const sendMessage = async (message: string) => {
+  const sendMessage = async ({
+    message,
+    generate,
+  }: {
+    message: string;
+    generate?: boolean;
+  }) => {
     if (chatState.isTyping) return;
 
     setIsTyping(true);
 
-    const newMessage: Pick<IMessage, "author" | "message"> = {
+    const newMessage: Pick<IMessage, "author" | "message"> & {
+      generate?: boolean;
+    } = {
       author: "Vinicius Lima",
       message,
+      generate,
     };
 
     try {

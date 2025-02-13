@@ -24,7 +24,12 @@ const Chat = () => {
         ) : (
           <MessageList />
         )}
-        <ChatInput onSendMessage={sendMessage} />
+        <ChatInput
+          onSendMessage={async (input) => {
+            await sendMessage({ message: input });
+            await sendMessage({ message: input, generate: true });
+          }}
+        />
       </div>
     </div>
   );
