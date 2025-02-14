@@ -2,6 +2,8 @@
 
 This is a chat application built with Next.js. The project includes a database system, unit tests, and a dashboard to view all messages. The chatbot is integrated with Google Gemini AI and responds to messages like a real AI chatbot. This chat only loads the last 50 messages logged in the system.
 
+You need to generate a Google api key here https://aistudio.google.com/u/5/apikey and set up on .env file.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (recommended the LTS version)
